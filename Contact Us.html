@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="cat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Didact+Gothic&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="Health Mi.css">
+
+</head>
+   <style>
+        html {
+            font-size: 16px; /* 基础字体大小 */
+        }
+    
+        body {
+            font-family: "Nunito", serif;
+        color: #A8D5BA;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+    
+        .box {
+            margin: 0;
+            padding: 0;
+            background-image: url(Picture/ContactUs_DekstopBG.jpg);
+            background-size: cover;
+            background-position: center bottom;
+            min-height: 100vh;
+        }
+    
+        .container-contact {
+            font-size: 1.125rem; /* 基础字体大小 */
+            width: 80%;
+            max-width: 700px;
+            margin-left: 20px;
+            padding: 2vw;
+        }
+    
+        h2 {
+            font-family: "Caprasimo", serif;
+            font-size: 4.375rem; /* 默认字体 */
+            color: #FFBB49;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .form-group label {
+            font-size: 1rem;
+        }
+    
+        .form-group input {
+            font-size: 1rem;
+            width: 100%;
+            padding: 12px;
+            padding-left: 50px;
+            border: 1px solid #ccc;
+            border-radius: 100px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            border: none;
+        }
+    
+        .form-group textarea {
+            width: 100%;
+            padding: 20px;
+            padding-bottom: 100px;
+            padding-left: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+            margin-bottom: 8px;
+            border: none;
+            resize: none;
+        }
+
+                /* 更改占位符的颜色 */
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #A8D5BA; /* 设置占位符的颜色 */
+            opacity: 1; /* 确保颜色完全生效 */
+        }
+
+        .btn {
+            font-family: "Caprasimo", serif;
+            display: block;
+            width: 100%;
+            padding: 20px;
+            font-size: 2rem;
+            background-color: #FFBB49;
+            color: #000000;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            text-align: center;
+        }
+    
+        .btn:hover {
+            background-color: #FFBB49;
+            box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-expand-lg .navbar-collapse{
+            justify-content: flex-end;
+        }
+
+        .logo{
+    width: 200px  
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D'http://www.w3.org/2000/svg' viewBox%3D'0 0 30 30'%3E%3Cpath stroke%3D'green' stroke-width%3D'2' d%3D'M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 25px;
+    }
+
+    .nav-item{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .navbar-nav .nav-link:hover {
+    color: #FFBB49;
+    text-decoration: underline;
+    }
+
+    .fs-4{
+        color: black;
+        font-family: "Caprasimo", serif;
+    }
+
+    .py-3{
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+
+    @media (max-width:1000px) {
+        .py-3{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+    }
+@media (max-width: 834px) {
+            html {
+                font-size: 16px; /* 移动设备字体缩小 */
+            }
+            .box {
+                min-height: 1000px;
+                padding-top: 10px;
+                background-image: url(Picture/AboutUs_TabletBG.png);
+                /* background-size: 150%; */
+                background-position: center bottom;
+                background-repeat: no-repeat;
+                box-sizing: border-box;
+            }
+
+            .container-contact {
+                width: 90%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column; /* Align items vertically */
+                flex-wrap: nowrap;
+                gap: 20px; /* Automatically add a vertical gap of 20px between items */
+            }
+    
+            h2 {
+                text-align: center;
+                font-size: 3.5rem;
+            }
+    
+            .form-group input,
+            .form-group textarea
+            {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .btn {
+                padding: 10px;
+                font-size: 1.5rem;
+            }
+
+            .mb-0{
+                flex-direction: column;}
+            }
+            
+
+        @media (max-width: 428px) {
+            html {
+                font-size: 16px; /* 移动设备字体缩小 */
+                overflow-x: hidden;
+            }
+            .box {  
+                min-height: 800px;
+                padding-top: 10px;
+                background-image: url(Picture/AboutUs_TabletBG.png);
+                background-size: 120%; /* 放大图片到120% */
+                background-position: center top; /* 默认显示顶部 */
+                background-repeat: no-repeat;
+                box-sizing: border-box;
+            }
+
+            .container-contact {
+                width: 90%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column; /* Align items vertically */
+                flex-wrap: nowrap;
+                gap: 20px; /* Automatically add a vertical gap of 20px between items */
+            }
+    
+            h2 {
+                text-align: center;
+            }
+    
+            .form-group input,
+            .form-group textarea
+            {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .btn {
+                padding: 10px;
+                font-size: 1.5rem;
+            }
+            .mb-0{
+                flex-direction: column;}
+        }
+    </style>
+<body>
+
+    <header class="py-3" style="background-color: #A8D5BA;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A8D5BA;">
+          <div class="container-fluid">
+            <!-- Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(34%) sepia(72%) saturate(747%) hue-rotate(109deg) brightness(88%) contrast(84%);"></span>
+              </button>
+    
+    
+            <!-- Logo and Title -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="Picture/logo.png" alt="Health Mi" class="me-2" style="width: 50px; height: auto;">
+              <span class="fs-4" >Health Mi</span>
+            </a>
+    
+      
+            <div class="container d-flex align-items-center justify-content-between">
+            <!-- Navbar Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="Categories.html">Categories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="Recipes Page.html">Recipes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="About Us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="Contact Us.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="FAQ.html">FAQ</a>
+                </li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <div class="box">
+        <div class="container-contact">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="form-group" style="position: relative;">
+                    <i class="fa-solid fa-user" style="position: absolute; left: 20px; top: 23px; transform: translateY(-50%); color: #A8D5BA;"></i>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group" style="position: relative;">
+                    <i class="fa-solid fa-envelope" style="position: absolute; left: 20px; top: 23px; transform: translateY(-50%); color: #A8D5BA;"></i>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" onclick="sendMail()" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+<footer>
+    <div class="footer">
+        <div class="footer row">
+      
+                      <div class="column col-4">
+                          <img src="Picture/logo.png" alt="logo" class="logo" >
+                          <h2>Health Mi</h2>
+                      </div>
+                  <div class="col-8">
+                      <div class="col-xl-4">
+                          <h3>Contact Us</h3>
+                          <ul></ul>
+                          <p>healthmi@gmail.com</p>
+                          <ul></ul>
+                          <p>+60 11-1617 5334</p>
+                          <p>+60 11-1051 8671</p>
+                          <p>+60 18-9470 567</p>
+                      </div>
+      
+                      <div class="col-xl-4">
+                          <h3>More</h3>
+                          <ul></ul>
+                      
+                          <div class="col-xl-5 ">
+                              <a href="Home.html" class="footer-link">Home</a>
+                              <ul></ul>
+                              <a href="Categories.html" class="footer-link">Categories</a>
+                              <ul></ul>
+                              <a href="Recipes Page.html" class="footer-link">Recipes</a>
+                              <ul></ul>
+                              <a href="About Us.html" class="footer-link">About Us</a>
+                              <ul></ul>
+                              <a href="FAQ.html" class="footer-link hidden-underline">FAQ</a>
+                          </div>
+                      
+                      </div>
+                  </div>
+        </div>
+        </div>
+</footer>
+
+
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+    emailjs.init({
+    publicKey: "GspzlLDj0DKjIvHKK",
+    });
+    })();
+    </script>
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

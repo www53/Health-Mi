@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Mi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Didact+Gothic&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cat.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="Health Mi.css">
+
+    <style>
+        .hero-section h1 {
+        font-size: 4.375rem;
+        }
+
+        .recommended-section {
+            background-color: #FBEAC2;
+            padding: 20px 0;
+        }
+
+        .recommended-section h1 {
+            color: #FFBB49;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            background-color: #EDEDED;
+        }
+
+        .section {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 150px;
+            padding-right: 150px;
+            align-items: center; 
+        }
+
+        /* 针对小屏幕（手机）调整样式 */
+        @media (max-width: 576px) {
+    
+            .section {
+                padding-top: 30px;
+                padding-bottom: 30px
+;
+                padding-left:30px;
+                padding-right: 30px;
+                align-items: center; 
+            }
+            
+            .text-container h2 {
+                font-size: 32px; /* 缩小标题字体 */
+                text-align: center; /* 居中对齐 */
+            }
+
+    .text-container p {
+        font-size: 14px; /* 缩小段落字体 */
+        text-align: center; /* 居中对齐 */
+    }
+
+    .image-container img {
+        margin-top: 20px; /* 图片与文字之间增加间距 */
+    }
+
+            .grid-item img {
+                width: 100%; /* 图片宽度占满父容器 */
+                height: auto; /* 设置固定高度 */
+                object-fit: cover; /* 确保图片内容按比例裁剪，适应容器 */
+            }
+
+            h1 {
+                font-size: 4.375rem;
+            }
+
+            .img-fluid {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .categories .row {
+                flex-direction: column;
+            }
+
+            .categories .col-md-4 {
+                width: 100%;
+                margin-bottom: 15px;
+                    }
+        }
+
+        /* 针对中屏幕（平板）调整样式 */
+        @media (max-width: 768px) {
+            .section {
+            background-color: #FBEAC2;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 100px;
+            padding-right: 100px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .grid-item img {
+                width: 100%; /* 图片宽度占满父容器 */
+                height: 90%; /* 设置固定高度 */
+                object-fit: cover; /* 确保图片内容按比例裁剪，适应容器 */
+            }
+            
+            .categories .row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .categories .col-md-4 {
+                width: 48%;
+                margin-bottom: 15px;
+            }
+            .text-container {
+                max-width: 100%;
+                margin-right: 0;
+                text-align: center;
+            }
+
+            .image-container {
+                margin-top: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+
+<header class="py-3" style="background-color: #A8D5BA;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A8D5BA;">
+      <div class="container-fluid">
+        <!-- Toggler for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="filter: invert(34%) sepia(72%) saturate(747%) hue-rotate(109deg) brightness(88%) contrast(84%);"></span>
+          </button>
+
+
+        <!-- Logo and Title -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="Picture/logo.png" alt="Health Mi" class="me-2" style="width: 50px; height: auto;">
+          <span class="fs-4" >Health Mi</span>
+        </a>
+
+  
+        <div class="container d-flex align-items-center justify-content-between">
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="Home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="Categories.html">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="Recipes Page.html">Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="About Us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark" href="Contact Us.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="FAQ.html">FAQ</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </nav>
+</header>
+
+    
+<!-- Computer -->
+<div class="d-none d-sm-none d-lg-block">
+		<!-- Hero Section -->
+	<div class="section d-flex align-items-center justify-content-center py-4" style="background-color: #FFE099;">
+		<div class="container d-flex align-items-center justify-content-center flex-wrap">
+		  
+			<!-- Text Section -->
+			<div class="text-container d-flex flex-column" style="max-width: 60%; color: black; font-size: 24px; margin-right: 20px;">
+				<h2 style="font-size: 48px; margin-bottom: 10px;">Healthy recipes, a happy choice for cats!</h2>
+				<p style="font-size: 19px;">Carefully crafted delicious and balanced recipes for cats to help them grow healthy. Nutritious meals that keep your feline vibrant and happy every day!</p>
+			</div>
+		  
+			<!-- Image Section -->
+			<div class="image-container">
+				<img src="home page img.jpg" alt="Dietary Preferences" class="img-fluid rounded" style="max-width: 100%;">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Smart Phone -->
+<div class="d-block d-sm-block d-lg-none">
+		<!-- Hero Section -->
+	<div class="py-4" style="background-color: #FFE099;">
+		<div class="container d-flex align-items-center justify-content-center flex-wrap">
+			
+			<!-- Image Section -->
+			<div class="image-container">
+				<p><img src="home page img.jpg" alt="Dietary Preferences" class="img-fluid rounded" style="max-width: 100%;"></p>
+			</div>   
+			
+			<!-- Text Section -->
+			<div style="max-width: 100%; color: black; font-size: 24px; ">
+				<h2 style="font-size: 45px; margin-bottom: 10px;">Healthy recipes, a happy choice for cats !</h2>
+				<p style="font-size: 20px;">Carefully crafted delicious and balanced recipes for cats to help them grow healthy. Nutritious meals that keep your feline vibrant and happy every day!</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<!-- Computer -->
+<div class="d-none d-sm-none d-lg-block">
+    <!-- Categories Section -->
+    <div class="section categories py-3" style="background-color: #FBEAC2;">
+        <div class="container text-center" style="color: #FFBB49; font-size: 25px;">
+            <h1 class="mb-4" >Categories</h1>
+            <div class="row">
+                <div class="col-md-4 col-sm-12 mb-4" style="color: #000000;">
+                    <img src="cate img1,2.jpg" class="rounded-circle mb-3" style="width: 200px; height: 200px;" alt="Dietary Preferences">
+                    <p class="p1">Dietary Preferences</p>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-4" style="color: #000000;">
+                    <img src="cate img2,2.jpg" class="rounded-circle mb-3" style="width: 200px; height: 200px;" alt="Preparation Difficulty">
+                    <p class="p1">Preparation Difficulty</p>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-4" style="color: #000000;">
+                    <img src="cate img3,2.jpg" class="rounded-circle mb-3" style="width: 200px; height: 200px;" alt="Health Concerns">
+                    <p class="p1">Health Concerns</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Smart Phone -->
+<div class="d-block d-sm-block d-lg-none">
+    <!-- Categories Section -->
+    <div class="categories py-3" style="background-color: #FBEAC2;">
+        <div class="container text-center" style="color: #FFBB49; font-size: 21px;">
+            <h1 class="mb-4" style="font-size: 30px;">Categories</h1>
+            <div style="display: flex; justify-content: center;">
+                <div class="col-md-4 col-sm-12 mb-4" style="color: #000000;">
+                    <img src="cate img1,2.jpg" class="rounded-circle mb-3" style="width: 120px;" alt="Dietary Preferences">
+                    <p class="p1">Dietary Preferences</p>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-4" style="color: #000000;">
+                    <img src="cate img2,2.jpg" class="rounded-circle mb-3" style="width: 120px;" alt="Preparation Difficulty">
+                    <p class="p1">Preparation Difficulty</p>
+                </div>
+                <div class="col-md-4 col-sm-12 mb-4" style="color: #000000;">
+                    <img src="cate img3,2.jpg" class="rounded-circle mb-3" style="width: 120px;" alt="Health Concerns">
+                    <p class="p1">Health Concerns</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Computer -->
+<div class="d-none d-sm-none d-lg-block">
+    <!-- Categories -->
+    <div class="section categories py-1" style="background-color: #FBEAC2;">
+        <div class="container mt-5">
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-3">
+                    <div class="card text-center h-100" style="border: 2px solid #A8D5BA; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
+                        <div class="card-body" style="background-color: #A8D5BA;">
+                            <img src="recipe5.jpg.jpg" alt="Fishy Treats" class="img-fluid mb-3" style="border-radius: 10px; border: 1px solid #000;">
+                            <h5 class="card-title" style="color: #000000; font-weight: bold;">Fishy Treats from the Freezer</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-3">
+                    <div class="card text-center h-100" style="border: 2px solid #A8D5BA; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
+                        <div class="card-body" style="background-color: #A8D5BA;">
+                            <img src="recipe4.jpg.jpg" alt="Fishy Treats" class="img-fluid mb-3" style="border-radius: 10px; border: 1px solid #000;">
+                            <h5 class="card-title" style="color: #000000; font-weight: bold; margin-top: 0; padding-bottom: 0px;">Fishy Treats from the Freezer</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-3">
+                    <div class="card text-center h-100" style="border: 2px solid #A8D5BA; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
+                        <div class="card-body" style="background-color: #A8D5BA;">
+                            <img src="recipe2.2.jpg" alt="Fishy Treats" class="img-fluid mb-3" style="border-radius: 10px; border: 1px solid #000;">
+                            <h5 class="card-title" style="color: #000000; font-weight: bold;">Fishy Treats from the Freezer</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-3">
+                    <div class="card text-center h-100" style="border: 2px solid #A8D5BA; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
+                        <div class="card-body" style="background-color: #A8D5BA;">
+                            <img src="cate img3.jpg" alt="Fishy Treats" class="img-fluid mb-3" style="border-radius: 10px; border: 1px solid #000;">
+                            <h5 class="card-title" style="color: #000000; font-weight: bold;">Fishy Treats from the Freezer</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Smart Phone -->
+<div class="d-block d-sm-block d-lg-none">
+    <!-- Categories 1 -->
+    <div class="categories py-1" style="background-color: #FBEAC2;">
+        <div class="container mt-0">
+            <div class="row g-0">
+				<div style="display: flex;">
+					<!-- Card 1 -->
+					<div class="col-md-3">
+						<div class="card text-center h-100" style="border: 2px solid #A8D5BA; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
+							<div class="card-body" style="background-color: #A8D5BA;">
+								<img src="recipe5.jpg.jpg" alt="Fishy Treats" class="img-fluid mb-3" style="border-radius: 10px; border: 1px solid #000;">
+								<h5 class="card-title" style="color: #000000; font-weight: bold;">Fishy Treats from the Freezer</h5>
+							</div>
+						</div>
+					</div>
+					<div style="margin-right: 15px;"></div>
+					<!-- Card 2 -->
+					<div class="col-md-3">
+						<div class="card text-center h-100" style="border: 2px solid #A8D5BA; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
+							<div class="card-body" style="background-color: #A8D5BA;">
+								<img src="recipe4.jpg.jpg" alt="Fishy Treats" class="img-fluid mb-3" style="border-radius: 10px; border: 1px solid #000;">
+								<h5 class="card-title" style="color: #000000; font-weight: bold; margin-top: 0; padding-bottom: 0px;">Fishy Treats from the Freezer</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories 2 -->
+    <div class="categories py-1" style="background-color: #FBEAC2;">
+        <div class="container mt-2">
+            <div class="row g-0">
+				<div style="display: flex;">
+					<!-- Card 1 -->
+					<div class="col-md-3">
+						<div class="card text-center h-100" style="border: 2px solid #A8D5BA; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
+							<div class="card-body" style="background-color: #A8D5BA;">
+								<img src="recipe2.2.jpg" alt="Fishy Treats" class="img-fluid mb-3" style="border-radius: 10px; border: 1px solid #000;">
+								<h5 class="card-title" style="color: #000000; font-weight: bold;">Fishy Treats from the Freezer</h5>
+							</div>
+						</div>
+					</div>
+					<div style="margin-right: 15px;"></div>
+					<!-- Card 2 -->
+					<div class="col-md-3">
+						<div class="card text-center h-100" style="border: 2px solid #A8D5BA; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
+							<div class="card-body" style="background-color: #A8D5BA;">
+								<img src="cate img3.jpg" alt="Fishy Treats" class="img-fluid mb-3" style="border-radius: 10px; border: 1px solid #000;">
+								<h5 class="card-title" style="color: #000000; font-weight: bold;">Fishy Treats from the Freezer</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>	
+	
+
+
+<!-- Computer -->
+<div class="d-none d-sm-none d-lg-block">
+    <!-- Today's Recommended -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+		<div class="section recommended py-5" style="background-color: #FBEAC2;">
+			<div class="container" style="color: #FFBB49;">
+				<h1 class="text-center mb-4">Today’s Recommended</h1>
+				<div class="row " id="masonry-grid">
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="recipe1.jpg.jpg" alt="Recipe 1" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="recipe2.jpg.jpg" alt="Recipe 2" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="cate img1.jpg" alt="Recipe 3" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="recipe4.jpg.jpg" alt="Recipe 4" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="recipe5.jpg.jpg" alt="Recipe 5" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="recipe6.jpg.jpg" alt="Recipe 6" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="recipe7.1.jpg" alt="Recipe 7" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="recipe8.jpg.jpg" alt="Recipe 8" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="recipe9.jpg" alt="Recipe 9" class="img-fluid rounded shadow">
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<img src="recipe10.jpg" alt="Recipe 10" class="img-fluid rounded shadow">
+					</div>
+				</div>
+			</div>
+		</div>
+</div>	
+
+<!-- Smart Phone -->
+<div class="d-block d-sm-block d-lg-none">
+    <!-- Today's Recommended -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+		<div class="py-5" style="background-color: #FBEAC2;">
+			<div class="container" style="color: #FFBB49;">
+				<h1 class="text-center mb-4" style="font-size: 30px;">Today’s Recommended</h1>
+				<div class="row " id="masonry-grid">
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="recipe1.jpg.jpg" alt="Recipe 1" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="recipe2.jpg.jpg" alt="Recipe 2" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="cate img1.jpg" alt="Recipe 3" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="recipe4.jpg.jpg" alt="Recipe 4" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="recipe5.jpg.jpg" alt="Recipe 5" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="recipe6.jpg.jpg" alt="Recipe 6" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="recipe7.1.jpg" alt="Recipe 7" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="recipe8.jpg.jpg" alt="Recipe 8" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="recipe9.jpg" alt="Recipe 9" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+					<div class="col-md-3 col-sm-6 mb-4 grid-item">
+						<center><img src="recipe10.jpg" alt="Recipe 10" style="width: 200px;" class="img-fluid rounded shadow"></center>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var msnry = new Masonry('#masonry-grid', {
+                itemSelector: '.col-md-3',
+                columnWidth: '.col-md-3',
+                percentPosition: true
+            });
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Footer -->
+    <div class="footer">
+            <div class="row">
+        
+                        <div class="column col-4">
+                            <img src="Picture/logo.png" alt="logo" class="logo" >
+                            <h2>Health Mi</h2>
+                        </div>
+                    <div class="col-8">
+                        <div class="col-xl-4">
+                            <h3>Contact Us</h3>
+                            <ul></ul>
+                            <p>healthmi@gmail.com</p>
+                            <ul></ul>
+                            <p>+60 11-1617 5334</p>
+                            <p>+60 11-1051 8671</p>
+                            <p>+60 18-9470 567</p>
+                        </div>
+        
+                        <div class="col-xl-4">
+                            <h3>More</h3>
+                            <ul></ul>
+                        
+                            <div class="col-xl-5 ">
+                                <a href="Home.html" class="footer-link">Home</a>
+                                <ul></ul>
+                                <a href="Categories.html" class="footer-link">Categories</a>
+                                <ul></ul>
+                                <a href="Recipes Page.html" class="footer-link">Recipes</a>
+                                <ul></ul>
+                                <a href="About Us.html" class="footer-link">About Us</a>
+                                <ul></ul>
+                                <a href="FAQ.html" class="footer-link hidden-underline">FAQ</a>
+                            </div>
+                        
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    
+</body>
+
+</html>

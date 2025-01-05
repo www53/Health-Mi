@@ -1,0 +1,603 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="cat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Didact+Gothic&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="Health Mi.css">
+
+ 
+</head>    
+    <style>
+        body {
+            font-family: "Nunito", serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff4d9;
+            overflow-x: hidden;
+        }
+
+        .container-categories {
+            display: flex;
+            flex-wrap: wrap;
+            --bs-gutter-x: 0;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            position: relative;
+            max-width: 300px;
+            background-color: #FFE099;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar::after{
+            content:"";
+            position:absolute;
+            top:0;
+            right:0;
+            height: 100%;
+            width: 100%;
+            background-color: #FFE099;
+            z-index:-1;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar h2 {
+            font-family: "Caprasimo", serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 5px 0;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .main-content h1 {
+            font-family: "Caprasimo", serif;
+            font-size: 4.375rem; /* 默认字体 */
+            color: #FFBB49;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .recipe-card {
+            background-color: #A8D5BA;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+            display: block;
+        }
+
+        .recipe-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            aspect-ratio: 2 / 1;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-card:hover img {
+            transform: scale(0.9); /* 在 hover 时缩小至 90% */
+        }
+
+        .recipe-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .btn.active {
+            background-color: #FFBB49;
+            color:white;
+        }
+
+        .btn {
+            color: black;
+            padding: 4px 6px;
+            border: none;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .btn:hover {
+            color: #FFBB49;
+            background-color: #FFE099;
+        }
+
+        .btn:active {
+            color: #FFBB49 !important;
+            background-color:#FFE099 !important;
+        }
+
+        .container-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .btn-card {
+            color: black;
+            text-decoration: none; /* Remove underline */
+        }
+        .navbar-expand-lg .navbar-collapse{
+            justify-content: flex-end;
+        }
+        .logo{
+    width: 200px  
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D'http://www.w3.org/2000/svg' viewBox%3D'0 0 30 30'%3E%3Cpath stroke%3D'green' stroke-width%3D'2' d%3D'M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 25px;
+    }
+
+    .nav-item{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .navbar-nav .nav-link:hover {
+    color: #FFBB49;
+    text-decoration: underline;
+    }
+
+    .fs-4{
+        color: black;
+        font-family: "Caprasimo", serif;
+    }
+
+    .py-3{
+        padding-left: 90px;
+        padding-right: 90px;
+    }
+
+    @media (max-width:1000px) {
+        .py-3{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+    }
+
+        /* Mobile styles */
+        @media (max-width: 995px) {
+            html{
+                overflow-x: hidden;
+            }
+
+            .container-categories {
+                flex-direction: column;
+            }
+
+            .main-content h1 {
+                font-size: 36px; 
+            }
+
+            .sidebar {
+                max-width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .sidebar::after{
+                left: -25vw;
+                height: 100%;
+                width: 150vw;
+            }
+
+            .main-content{
+                flex: 1;
+                padding: 20px;
+                width: 100%; /* 确保占满视口宽度 */
+                box-sizing: border-box; /* 包括内边距在宽度计算中 */
+                align-items: center;
+            }
+            
+            .recipe-grid {
+            grid-template-columns: repeat(2, 1fr); 
+            }
+
+            @media (hover: none) and (pointer: coarse) {
+            .btn:hover {
+                background-color: initial; /* 重置为初始值 */
+                color: initial;           /* 重置为初始值 */
+            }
+            .btn.active {
+            background-color: #FFBB49;
+            color:white;
+            }
+            }
+        }
+    </style>
+
+<body>
+    
+    <header class="py-3" style="background-color: #A8D5BA;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A8D5BA;">
+          <div class="container-fluid">
+            <!-- Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter: invert(34%) sepia(72%) saturate(747%) hue-rotate(109deg) brightness(88%) contrast(84%);"></span>
+              </button>
+    
+    
+            <!-- Logo and Title -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="Picture/logo.png" alt="Health Mi" class="me-2" style="width: 50px; height: auto;">
+              <span class="fs-4" >Health Mi</span>
+            </a>
+    
+      
+            <div class="container d-flex align-items-center justify-content-between">
+            <!-- Navbar Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="Categories.html">Categories</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="Recipes Page.html">Recipes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="About Us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="Contact Us.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="FAQ.html">FAQ</a>
+                </li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </nav>
+    </header>
+      
+
+<div class="container-categories">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="box">
+            <h2> Dietary Preferences</h2>
+            <ul>
+                <li><button class="btn btn-link" id="fish" data-category="fish"> Fish</button></li>
+                <li><button class="btn btn-link" id="meat" data-category="meat"> Meat</button></li>
+                <li><button class="btn btn-link" id="soups" data-category="soups"> Soups</button></li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2>Preparation Difficulty</h2>
+            <ul>
+                <li><button class="btn btn-link" id="easy" data-category="easy">Easy</button></li>
+                <li><button class="btn btn-link" id="moderate" data-category="moderate">Moderate</button></li>
+                <li><button class="btn btn-link" id="challenging" data-category="challenging">Challenging</button></li>
+            </ul>
+        </div>
+    
+        <div class="box">
+            <h2> Health Concerns</h2>
+            <ul>
+                <li><button class="btn btn-link" id="weight-control" data-category="weight-control">Weight Control</button></li>
+                <li><button class="btn btn-link" id="allergy-friendly" data-category="allergy-friendly">Allergy-Friendly</button></li>
+                <li><button class="btn btn-link" id="kidney-friendly" data-category="kidney-friendly">Kidney-Friendly</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <h1>Categories</h1>
+        <div class="recipe-grid">
+            <!-- Fish -->            
+            <a href="Recipies 1.html" class="recipe-card btn-card" data-category="fish">
+                <div class="container-img">
+                    <img src="Picture/recipes 1.jpg" alt="Recipe Image">
+                </div>
+                <h3>Organic Treats with Spinach and Chicken 2</h3>
+            </a>
+            <a href="Recipes 2.html" class="recipe-card btn-card" data-category="fish">
+                <div class="container-img">
+                    <img src="Picture/salmon.jpg" alt="Recipe Image">
+                </div>
+                <h3>Fishy Treats from the Freezer</h3>
+            </a>
+            <a href="Recipes 10.html" class="recipe-card btn-card" data-category="fish">
+                <div class="container-img">
+                    <img src="Picture/Recipes 10.jpg" alt="Recipe Image">
+                </div>
+                <h3>Nutritious No-Bake Tuna Balls for Cats</h3>
+            </a>
+            <a href="Recipes 3.html" class="recipe-card btn-card" data-category="fish">
+                <div class="container-img">
+                    <img src="Picture/recipes 3.jpg" alt="Recipe Image">
+                </div>
+                <h3>Tasty Tuna and Cornmeal Bakes</h3>
+            </a>
+
+            <!-- Meat -->
+            <a href="Recipes 6.html" class="recipe-card btn-card" data-category="meat">
+                <div class="container-img">
+                    <img src="Picture/recipes 6.jpg" alt="Recipe Image">
+                </div>
+                <h3>Tasty Tuna and Cornmeal Bakes</h3>
+            </a>
+            <a href="Recipes 13.html" class="recipe-card btn-card" data-category="meat">
+                <div class="container-img">
+                    <img src="Picture/Categories 2.jpg" alt="Recipe Image">
+                </div>
+                <h3>Chicken and Carrot Mash</h3>
+            </a>
+            <a href="Recipies 11.html" class="recipe-card btn-card" data-category="meat">
+                <div class="container-img">
+                    <img src="Picture/recipes 11.jpg" alt="Recipe Image">
+                </div>
+                <h3>Organic Treats with Spinach and Chicken</h3>
+            </a>
+            <a href="Recipes 7.html" class="recipe-card btn-card" data-category="meat">
+                <div class="container-img">
+                    <img src="Picture/recipes 7.jpg" alt="Recipe Image">
+                </div>
+                <h3>Kitty’s Tasty Rabbit and Chicken Dinner</h3>
+            </a>
+            <a href="Recipies 1.html" class="recipe-card btn-card" data-category="meat">
+                <div class="container-img">
+                    <img src="Picture/recipes 1.jpg" alt="Recipe Image">
+                </div>
+                <h3>Organic Treats with Spinach and Chicken</h3>
+            </a>
+            <a href="Recipes 4.html" class="recipe-card btn-card" data-category="meat">
+                <div class="container-img">
+                    <img src="Picture/recipes 4.jpg" alt="Recipe Image">
+                </div>
+                <h3>Low-Phosphorus Chicken and Pumpkin Meal</h3>
+            </a>
+            <a href="Recipes 8.html" class="recipe-card btn-card" data-category="meat">
+                <div class="container-img">
+                    <img src="Picture/recipes 8.jpg" alt="Recipe Image">
+                </div>
+                <h3>Lean Beef and Zucchini Meal</h3>
+            </a>
+            <a href="Recipes 12.html" class="recipe-card btn-card" data-category="meat">
+                <div class="container-img">
+                    <img src="Picture/recipes 12.jpg" alt="Recipe Image">
+                </div>
+                <h3>Rabbit and Quinoa Meal</h3>
+            </a>
+
+            <!-- Soups -->
+            <a href="Recipes 9.html" class="recipe-card btn-card" data-category="soups">
+                <div class="container-img">
+                    <img src="Picture/Recipes 9.jpg" alt="Recipe Image">
+                </div>
+                <h3>Fish Broth with Chicken and Rice</h3>
+            </a>
+
+            <!-- Easy -->
+            <a href="Recipes 10.html" class="recipe-card btn-card" data-category="easy">
+                <div class="container-img">
+                    <img src="Picture/recipes 10.jpg" alt="Recipe Image">
+                </div>
+                <h3>Nutritious No-Bake Tuna Balls for Cats</h3>
+            </a>
+            <a href="Recipes 13.html" class="recipe-card btn-card" data-category="easy">
+                <div class="container-img">
+                    <img src="Picture/Categories 2.jpg" alt="Recipe Image">
+                </div>
+                <h3>Chicken and Carrot Mash</h3>
+            </a>
+            <a href="Recipes 5.html" class="recipe-card btn-card" data-category="easy">
+                <div class="container-img">
+                    <img src="Picture/recipes 5.jpg" alt="Recipe Image">
+                </div>
+                <h3>Chicken and Carrot Mash</h3>
+            </a>
+            <a href="Recipes 4.html" class="recipe-card btn-card" data-category="easy">
+                <div class="container-img">
+                    <img src="Picture/recipes 4.jpg" alt="Recipe Image">
+                </div>
+                <h3>Low-Phosphorus Chicken and Pumpkin Meal</h3>
+            </a>
+            <a href="Recipes 8.html" class="recipe-card btn-card" data-category="easy">
+                <div class="container-img">
+                    <img src="Picture/recipes 8.jpg" alt="Recipe Image">
+                </div>
+                <h3>Lean Beef and Zucchini Meal</h3>
+            </a>
+
+            <!-- Moderate -->
+            <a href="Recipies 1.html" class="recipe-card btn-card" data-category="moderate">
+                <div class="container-img">
+                    <img src="Picture/recipes 1.jpg" alt="Recipe Image">
+                </div>
+                <h3>Tasty Tuna and Cornmeal Bakes</h3>
+            </a>
+            <a href="Recipes 2.html" class="recipe-card btn-card" data-category="moderate">
+                <div class="container-img">
+                    <img src="Picture/salmon.jpg" alt="Recipe Image">
+                </div>
+                <h3>Fishy Treats from the Freezer</h3>
+            </a>
+            <a href="Recipies 11.html" class="recipe-card btn-card" data-category="moderate">
+                <div class="container-img">
+                    <img src="Picture/recipes 11.jpg" alt="Recipe Image">
+                </div>
+                <h3>Organic Treats with Spinach and Chicken</h3>
+            </a>
+            <a href="Recipes 9.html" class="recipe-card btn-card" data-category="moderate">
+                <div class="container-img">
+                    <img src="Picture/Recipes 9.jpg" alt="Recipe Image">
+                </div>
+                <h3>Fish Broth with Chicken and Rice</h3>
+            </a>
+            <a href="Recipes 12.html" class="recipe-card btn-card" data-category="moderate">
+                <div class="container-img">
+                    <img src="Picture/recipes 12.jpg" alt="Recipe Image">
+                </div>
+                <h3>Rabbit and Quinoa Meal</h3>
+            </a>
+
+            <!-- Challenging -->
+            <a href="Recipes 3.html" class="recipe-card btn-card" data-category="challenging">
+                <div class="container-img">
+                    <img src="Picture/recipes 3.jpg" alt="Recipe Image">
+                </div>
+                <h3>Fish Broth with Chicken and Rice</h3>
+            </a>
+            <a href="Recipes 11.html" class="recipe-card btn-card" data-category="challenging">
+                <div class="container-img">
+                    <img src="Picture/recipes 11.jpg" alt="Recipe Image">
+                </div>
+                <h3>Organic Treats with Spinach and Chicken</h3>
+            </a>
+            <a href="Recipes 7.html" class="recipe-card btn-card" data-category="challenging">
+                <div class="container-img">
+                    <img src="Picture/recipes 7.jpg" alt="Recipe Image">
+                </div>
+                <h3>Kitty’s Tasty Rabbit and Chicken Dinner</h3>
+            </a>
+
+            <!-- Weight Control -->
+            <a href="Recipes 8.html" class="recipe-card btn-card" data-category="weight-control">
+                <div class="container-img">
+                    <img src="Picture/recipes 8.jpg" alt="Recipe Image">
+                </div>
+                <h3>Lean Beef and Zucchini Meal</h3>
+            </a>
+
+            <!-- Allergy-Friendly -->
+            <a href="Recipes 12.html" class="recipe-card btn-card" data-category="allergy-friendly">
+                <div class="container-img">
+                    <img src="Picture/recipes 12.jpg" alt="Recipe Image">
+                </div>
+                <h3>Rabbit and Quinoa Meal</h3>
+            </a>
+
+            <!-- Kidney-Friendly -->
+            <a href="Recipes 4.html" class="recipe-card btn-card" data-category="kidney-friendly">
+                <div class="container-img">
+                    <img src="Picture/recipes 4.jpg" alt="Recipe Image">
+                </div>
+                <h3>Low-Phosphorus Chicken and Pumpkin Meal</h3>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer py-5" style="background-color: #A8D5BA; color: #000000;">
+    <div class="footer">
+        <div class="footer row">
+      
+                      <div class="column col-4">
+                          <img src="Picture/logo.png" alt="logo" class="logo" >
+                          <h2>Health Mi</h2>
+                      </div>
+                  <div class="col-8">
+                      <div class="col-xl-4">
+                          <h3>Contact Us</h3>
+                          <ul></ul>
+                          <p>healthmi@gmail.com</p>
+                          <ul></ul>
+                          <p>+60 11-1617 5334</p>
+                          <p>+60 11-1051 8671</p>
+                          <p>+60 18-9470 567</p>
+                      </div>
+      
+                      <div class="col-xl-4">
+                          <h3>More</h3>
+                          <ul></ul>
+                      
+                          <div class="col-xl-5 ">
+                              <a href="Home.html" class="footer-link">Home</a>
+                              <ul></ul>
+                              <a href="Categories.html" class="footer-link">Categories</a>
+                              <ul></ul>
+                              <a href="Recipes Page.html" class="footer-link">Recipes</a>
+                              <ul></ul>
+                              <a href="About Us.html" class="footer-link">About Us</a>
+                              <ul></ul>
+                              <a href="FAQ.html" class="footer-link hidden-underline">FAQ</a>
+                          </div>
+                      
+                      </div>
+                  </div>
+        </div>
+        </div>
+</footer>
+
+
+<script>
+   // Initialize the active button and display the correct recipes on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const category = document.getElementById('fish');  // default category
+    category.classList.add('active');
+    filterRecipes(category.dataset.category);  // Display recipes based on 'fish'
+});
+
+// Function to filter recipes based on the category selected
+function filterRecipes(category) {
+    const recipeCards = document.querySelectorAll('.recipe-card');
+    recipeCards.forEach(card => {
+        if (card.dataset.category === category || category === 'all') {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Button click event to switch categories
+const buttons = document.querySelectorAll('.btn-link');
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        buttons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active'); // Add active class to clicked button
+        
+        const category = this.dataset.category;
+        filterRecipes(category);  // Filter recipe cards based on the selected category
+    });
+});
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
